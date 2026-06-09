@@ -1,6 +1,7 @@
 # Not Minecraft
 
-A custom C++ implementation of Minecraft Alpha. It originally started its life as a Wii port before being converted into a native PC project. 
+A custom C++ implementation of Minecraft Alpha. It originally started its life as a Wii port before being converted into a native PC project.
+This is not a clean room implementation, it was written while looking at a decompilation of Alpha 1.2.6
 
 ![Minecraft Alpha Gameplay](screenshot.png)
 
