@@ -4,7 +4,6 @@
 #include "../memory/MemoryAllocator.h"
 
 #include <SDL3/SDL.h>
-#include <SDL3/SDL_syswm.h>
 #include <iostream>
 #define STB_IMAGE_IMPLEMENTATION
 #include <thirdparty/stb_image.h>
@@ -490,23 +489,22 @@ void riContext::Init()
 	Width = 1280;
 	Height = 720;
 	NativeData = sysNew<riNativeData>();
-	if (SDL_Init(SDL_INIT_AUDIO | SDL_INIT_EVENTS | SDL_INIT_VIDEO))
+	if (!SDL_Init(SDL_INIT_AUDIO | SDL_INIT_EVENTS | SDL_INIT_VIDEO))
 	{
 		auto error = SDL_GetError();
-		printf_s("Ingaturroña: Failed to initialize SDL %s\n", error);
+		printf_s("Ingaturroña: Failed to initialize SDL: '%s'\n", error);
 		exit(0);
 	}
 
+
 	NativeData->pWindow = SDL_CreateWindow("Blaze3D Window", Width, Height, SDL_WINDOW_RESIZABLE);
 
-	SDL_SysWMinfo wmInfo{};
-	SDL_version sdlver;
-	SDL_VERSION(&sdlver);
-	wmInfo.version = SDL_GetVersion(&sdlver);
-	if (SDL_GetWindowWMInfo(NativeData->pWindow, &wmInfo, SDL_SYSWM_CURRENT_VERSION) != 0) {
+
+	hWnd = (HWND)SDL_GetPointerProperty(SDL_GetWindowProperties(NativeData->pWindow), SDL_PROP_WINDOW_WIN32_HWND_POINTER, nullptr);;
+
+	if (hWnd == nullptr) {
 		printf("Cant get native window handle: %s\n", SDL_GetError());
 	}
-	hWnd = wmInfo.info.win.window;
 
 	UINT CreateDeviceFlags = 0;
 
@@ -1100,7 +1098,8 @@ void riDevice::Draw(riHandle buffer, uint8_t vtfIndex, riPrimitiveType type, uin
 		if (!StreamingBuffer || dataSize > StreamingSize) {
 			if (StreamingBuffer) StreamingBuffer->Release();
 
-			StreamingSize = glm::max(dataSize, 64 * 1024 * 1024ULL);
+			//StreamingSize = glm::max(dataSize, 64 * 1024 * 1024ULL);
+			StreamingSize = dataSize;
 
 			D3D11_BUFFER_DESC bd = {};
 			bd.Usage = D3D11_USAGE_DYNAMIC;

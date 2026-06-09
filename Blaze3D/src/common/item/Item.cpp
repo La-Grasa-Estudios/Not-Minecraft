@@ -28,6 +28,10 @@ Item* Item::GetItem(int id)
 
 void Item::Init()
 {
+	for (int i = 0; i < sizeof(Item::ItemList) / sizeof(Item*); i++) {
+		Item::ItemList[i] = nullptr;
+	}
+
 	IronShovel = (new ItemTool(0, TOOL_TYPE_SHOVEL, TOOL_TIER_IRON))->SetIconIndex(82);
 	IronPickaxe = (new ItemTool(1, TOOL_TYPE_PICKAXE, TOOL_TIER_IRON))->SetIconIndex(98);
 	IronAxe = (new ItemTool(2, TOOL_TYPE_AXE, TOOL_TIER_IRON))->SetIconIndex(114);

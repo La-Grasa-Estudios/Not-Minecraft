@@ -1,4 +1,5 @@
-#ifdef _WIN32
+#if defined(_WIN32) && !defined(CMAKE_BUILD)
+
 #pragma comment(lib, "zlibstatic.lib")
 #pragma comment(lib, "dxgi.lib")
 #pragma comment(lib, "d3d11.lib")
