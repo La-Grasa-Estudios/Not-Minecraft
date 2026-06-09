@@ -1,9 +1,9 @@
 //
-// Linux/MacOS legacy OpenGL renderer.
-// Uses OpenGLES 3.2
+// Linux/MacOS OpenGL renderer.
+// Uses OpenGLES 3.2 or OpenGL 3.3
 //
 
-#ifdef RENDERER_LEGACYGL
+#ifdef RENDERER_GLES || RENDERER_GL3
 
 #include "../RenderingInterface.h"
 #include "../memory/MemoryAllocator.h"
@@ -89,9 +89,15 @@ void riContext::Init() {
 
     NativeData->pWindow = SDL_CreateWindow("Blaze3D Window", Width, Height, SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
 
+#if defined(RENDERER_GLES)
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 2);
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_ES);
+#else
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 3);
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
+#endif
 
 #if defined( DEBUG ) || defined( _DEBUG ) || !defined(NDEBUG)
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_FLAGS, SDL_GL_CONTEXT_DEBUG_FLAG);

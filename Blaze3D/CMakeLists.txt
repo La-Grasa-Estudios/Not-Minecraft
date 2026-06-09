@@ -3,8 +3,12 @@
 project(Blaze3D)
 
 # Dependencies
+
+set(ZLIB_USE_STATIC_LIBS OFF)
+
 find_package(SDL3 REQUIRED CONFIG REQUIRED)
 find_package(ZLIB REQUIRED)
+find_package(glm REQUIRED)
 
 set(B3D_SOURCE
 	Blaze3D.cpp
@@ -342,6 +346,9 @@ set(B3D_HEADER
 		src/Util.h
 )
 
+set(B3D_EXTRA_LIBS)
+
+
 if (WIN32)
 
 	message("Adding WIN32 code")
@@ -353,11 +360,14 @@ if (WIN32)
 			src/engine/win32/Win32RenderingInterface.cpp
 	)
 
+	set(B3D_EXTRA_LIBS d3d11)
+	
+
 elseif (UNIX)
 
 	message("Adding UNIX code")
 
-	add_compile_definitions(RENDERER_LEGACYGL)
+	add_compile_definitions(RENDERER_GLES)
 	list(APPEND B3D_SOURCE
 			src/engine/unix/System.cpp
 			src/engine/unix/UnixRenderingInterface.cpp
@@ -369,7 +379,6 @@ elseif (UNIX)
 			src/engine/unix/shaders/VertexShader.h
 	)
 
-	find_package(OpenGL REQUIRED COMPONENTS GLES2)
 
 else ()
 	error("Invalid platform!")
@@ -378,17 +387,15 @@ endif ()
 
 
 add_executable(Blaze3D ${B3D_SOURCE} ${B3D_HEADER})
+add_compile_definitions(CMAKE_BUILD)
 
 target_include_directories(Blaze3D PRIVATE 
 	${ZLIB_INCLUDE_DIRS} 
-	${SDL3_INCLUDE_DIRS} ${CMAKE_CURRENT_SOURCE_DIR}/src
+	${SDL3_INCLUDE_DIRS} 
+	${GLM_INCLUDE_DIRS}
+	${CMAKE_CURRENT_SOURCE_DIR}/src
 )
 
-target_link_libraries(Blaze3D PRIVATE SDL3::SDL3 ZLIB::ZLIB)
-
-if (UNIX)
-	target_link_libraries(Blaze3D PRIVATE OpenGL::GLES2)
-
-endif ()
+target_link_libraries(Blaze3D PRIVATE SDL3::SDL3 ZLIB::ZLIB glm::glm-header-only ${B3D_EXTRA_LIBS})
 
 file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/../Runtime/mc DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
