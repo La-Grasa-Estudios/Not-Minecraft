@@ -24,7 +24,7 @@ void main() {
 
     v_uv = a_texCoord;
     v_color = a_color;
-    v_normal = normalize(v_normal * mat3x3(NormalMatrix));
+    v_normal = normalize(a_normal * mat3x3(NormalMatrix));
 
 }
 
