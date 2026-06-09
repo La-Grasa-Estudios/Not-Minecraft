@@ -1,0 +1,463 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{83adeff8-d206-42ea-b12b-6d56df162979}</ProjectGuid>
+    <RootNamespace>Blaze3D</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);WITH_SDL2_STATIC;RENDERER_D3D11;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <ConformanceMode>false</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;C:\devkitPro\libogc\include;$(SolutionDir)Dependencies/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp23</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);WITH_SDL2_STATIC;RENDERER_D3D11;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <ConformanceMode>false</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;C:\devkitPro\libogc\include;$(SolutionDir)Dependencies/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp23</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Blaze3D.cpp" />
+    <ClCompile Include="src\client\Profiler.cpp" />
+    <ClCompile Include="src\client\renderer\block\BlockPreviewRenderer.cpp" />
+    <ClCompile Include="src\client\renderer\block\BlockRenderer.cpp" />
+    <ClCompile Include="src\client\renderer\entity\ArrowEntityRenderer.cpp" />
+    <ClCompile Include="src\client\renderer\entity\CreatureEntityRenderer.cpp" />
+    <ClCompile Include="src\client\renderer\entity\CreeperEntityRenderer.cpp" />
+    <ClCompile Include="src\client\renderer\entity\EntityRendererDispatcher.cpp" />
+    <ClCompile Include="src\client\renderer\entity\FallingSandEntityRenderer.cpp" />
+    <ClCompile Include="src\client\renderer\entity\ItemEntityRenderer.cpp" />
+    <ClCompile Include="src\client\renderer\entity\PigZombieEntityRenderer.cpp" />
+    <ClCompile Include="src\client\renderer\entity\TNTPrimedEntityRenderer.cpp" />
+    <ClCompile Include="src\client\ResourceManager.cpp" />
+    <ClCompile Include="src\common\block\BlockFallingSand.cpp" />
+    <ClCompile Include="src\common\block\BlockGrass.cpp" />
+    <ClCompile Include="src\common\block\BlockLog.cpp" />
+    <ClCompile Include="src\engine\Audio.cpp" />
+    <ClCompile Include="src\engine\Font.cpp" />
+    <ClCompile Include="src\engine\memory\MemoryAllocator.cpp" />
+    <ClCompile Include="src\engine\miniaudio\miniaudio.c" />
+    <ClCompile Include="src\common\Random.cpp" />
+    <ClCompile Include="src\engine\ScaledResolution.cpp" />
+    <ClCompile Include="src\engine\Time.cpp" />
+    <ClCompile Include="src\engine\win32\PragmaLibs.cpp" />
+    <ClCompile Include="src\engine\win32\System.cpp" />
+    <ClCompile Include="src\engine\win32\Win32RenderingInterface.cpp" />
+    <ClCompile Include="src\engine\zlib\izlibstream.cpp" />
+    <ClCompile Include="src\engine\zlib\ozlibstream.cpp" />
+    <ClCompile Include="src\common\block\Block.cpp" />
+    <ClCompile Include="src\common\block\BlockBookshelf.cpp" />
+    <ClCompile Include="src\common\block\BlockCactus.cpp" />
+    <ClCompile Include="src\common\block\BlockChest.cpp" />
+    <ClCompile Include="src\common\block\BlockCraftingTable.cpp" />
+    <ClCompile Include="src\common\block\BlockCrop.cpp" />
+    <ClCompile Include="src\common\block\BlockDoor.cpp" />
+    <ClCompile Include="src\common\block\BlockFarmland.cpp" />
+    <ClCompile Include="src\common\block\BlockFire.cpp" />
+    <ClCompile Include="src\common\block\BlockFlower.cpp" />
+    <ClCompile Include="src\common\block\BlockFungus.cpp" />
+    <ClCompile Include="src\common\block\BlockFurnace.cpp" />
+    <ClCompile Include="src\common\block\BlockGravel.cpp" />
+    <ClCompile Include="src\common\block\BlockLeaves.cpp" />
+    <ClCompile Include="src\common\block\BlockLiquid.cpp" />
+    <ClCompile Include="src\common\block\BlockCrossShaped.cpp" />
+    <ClCompile Include="src\common\block\BlockNetherPortal.cpp" />
+    <ClCompile Include="src\common\block\BlockPumpkin.cpp" />
+    <ClCompile Include="src\common\block\BlockReed.cpp" />
+    <ClCompile Include="src\common\block\BlockSlab.cpp" />
+    <ClCompile Include="src\common\block\BlockStairs.cpp" />
+    <ClCompile Include="src\common\block\BlockTNT.cpp" />
+    <ClCompile Include="src\common\block\BlockTorch.cpp" />
+    <ClCompile Include="src\common\CachedChunkAccess.cpp" />
+    <ClCompile Include="src\common\Chunk.cpp" />
+    <ClCompile Include="src\client\renderer\AnimatedFireTexture.cpp" />
+    <ClCompile Include="src\client\renderer\AnimatedLavaTexture.cpp" />
+    <ClCompile Include="src\client\renderer\AnimatedPortalTexture.cpp" />
+    <ClCompile Include="src\client\renderer\AnimatedWaterTexture.cpp" />
+    <ClCompile Include="src\client\Client.cpp" />
+    <ClCompile Include="src\client\renderer\ColorizerGrass.cpp" />
+    <ClCompile Include="src\client\renderer\ItemRenderer.cpp" />
+    <ClCompile Include="src\client\ParticleEngine.cpp" />
+    <ClCompile Include="src\client\PlayerHandler.cpp" />
+    <ClCompile Include="src\client\renderer\RenderHelper.cpp" />
+    <ClCompile Include="src\client\SPPlayerHandler.cpp" />
+    <ClCompile Include="src\client\SPWorldAccess.cpp" />
+    <ClCompile Include="src\client\renderer\WorldRenderer.cpp" />
+    <ClCompile Include="src\common\entity\AABB.cpp" />
+    <ClCompile Include="src\common\entity\AnimalEntityBase.cpp" />
+    <ClCompile Include="src\common\entity\ArrowEntity.cpp" />
+    <ClCompile Include="src\common\entity\BaseEntity.cpp" />
+    <ClCompile Include="src\common\entity\ChickenEntity.cpp" />
+    <ClCompile Include="src\common\entity\CowEntity.cpp" />
+    <ClCompile Include="src\common\entity\CreatureEntity.cpp" />
+    <ClCompile Include="src\common\entity\CreeperEntity.cpp" />
+    <ClCompile Include="src\common\entity\FallingSandEntity.cpp" />
+    <ClCompile Include="src\common\entity\ItemEntity.cpp" />
+    <ClCompile Include="src\common\entity\MobEntity.cpp" />
+    <ClCompile Include="src\common\entity\PigEntity.cpp" />
+    <ClCompile Include="src\common\entity\PigZombieEntity.cpp" />
+    <ClCompile Include="src\common\entity\PlayerEntity.cpp" />
+    <ClCompile Include="src\common\entity\TNTPrimedEntity.cpp" />
+    <ClCompile Include="src\common\entity\ZombieEntity.cpp" />
+    <ClCompile Include="src\common\gen\TerrainDecorator.cpp" />
+    <ClCompile Include="src\common\gen\WorldGenBase.cpp" />
+    <ClCompile Include="src\common\gen\WorldGenCactus.cpp" />
+    <ClCompile Include="src\common\gen\WorldGenCaves.cpp" />
+    <ClCompile Include="src\common\gen\WorldGenClay.cpp" />
+    <ClCompile Include="src\common\gen\WorldGenFire.cpp" />
+    <ClCompile Include="src\common\gen\WorldGenFlowers.cpp" />
+    <ClCompile Include="src\common\gen\WorldGenGlowstone.cpp" />
+    <ClCompile Include="src\common\gen\WorldGenMinable.cpp" />
+    <ClCompile Include="src\common\gen\WorldGenNetherLava.cpp" />
+    <ClCompile Include="src\common\gen\WorldGenPumpkin.cpp" />
+    <ClCompile Include="src\common\gen\WorldGenReeds.cpp" />
+    <ClCompile Include="src\common\ItemStack.cpp" />
+    <ClCompile Include="src\common\item\Item.cpp" />
+    <ClCompile Include="src\common\item\ItemBow.cpp" />
+    <ClCompile Include="src\common\item\ItemBucket.cpp" />
+    <ClCompile Include="src\common\item\ItemDoor.cpp" />
+    <ClCompile Include="src\common\item\ItemEmptyBucket.cpp" />
+    <ClCompile Include="src\common\item\ItemFlintAndSteel.cpp" />
+    <ClCompile Include="src\common\item\ItemFood.cpp" />
+    <ClCompile Include="src\common\item\ItemReed.cpp" />
+    <ClCompile Include="src\common\item\ItemWheatSeed.cpp" />
+    <ClCompile Include="src\common\IVec3Set.cpp" />
+    <ClCompile Include="src\client\renderer\model\ModelBase.cpp" />
+    <ClCompile Include="src\client\renderer\model\ModelBox.cpp" />
+    <ClCompile Include="src\client\renderer\model\ModelChicken.cpp" />
+    <ClCompile Include="src\client\renderer\model\ModelCow.cpp" />
+    <ClCompile Include="src\client\renderer\model\ModelCreeper.cpp" />
+    <ClCompile Include="src\client\renderer\model\ModelHumanoid.cpp" />
+    <ClCompile Include="src\client\renderer\model\ModelPart.cpp" />
+    <ClCompile Include="src\client\renderer\model\ModelPartItem.cpp" />
+    <ClCompile Include="src\client\renderer\model\ModelPig.cpp" />
+    <ClCompile Include="src\client\renderer\model\ModelRegistry.cpp" />
+    <ClCompile Include="src\client\MusicManager.cpp" />
+    <ClCompile Include="src\common\nbt\BigEndianDataStream.cpp" />
+    <ClCompile Include="src\common\nbt\NBTBase.cpp" />
+    <ClCompile Include="src\common\nbt\TagByteArray.cpp" />
+    <ClCompile Include="src\common\nbt\TagCompound.cpp" />
+    <ClCompile Include="src\common\nbt\TagList.cpp" />
+    <ClCompile Include="src\common\nbt\TagNumeric.cpp" />
+    <ClCompile Include="src\common\nbt\TagString.cpp" />
+    <ClCompile Include="src\common\noise\PerlinNoise.cpp" />
+    <ClCompile Include="src\common\noise\SimplexNoise.cpp" />
+    <ClCompile Include="src\common\path\PathFinder.cpp" />
+    <ClCompile Include="src\common\PortalStructure.cpp" />
+    <ClCompile Include="src\common\Recipe.cpp" />
+    <ClCompile Include="src\common\RegionFile.cpp" />
+    <ClCompile Include="src\common\SaveManager.cpp" />
+    <ClCompile Include="src\common\Teleporter.cpp" />
+    <ClCompile Include="src\common\tile\ChestTileEntity.cpp" />
+    <ClCompile Include="src\common\tile\FurnaceTileEntity.cpp" />
+    <ClCompile Include="src\common\tile\TileEntity.cpp" />
+    <ClCompile Include="src\common\Timer.cpp" />
+    <ClCompile Include="src\client\ui\IngameInterface.cpp" />
+    <ClCompile Include="src\client\ui\ScreenBase.cpp" />
+    <ClCompile Include="src\client\ui\ScreenContainer.cpp" />
+    <ClCompile Include="src\client\ui\ScreenCrafting.cpp" />
+    <ClCompile Include="src\client\ui\ScreenFurnace.cpp" />
+    <ClCompile Include="src\client\ui\ScreenGameOver.cpp" />
+    <ClCompile Include="src\client\ui\ScreenInventory.cpp" />
+    <ClCompile Include="src\client\ui\ScreenMainMenu.cpp" />
+    <ClCompile Include="src\client\ui\ScreenPause.cpp" />
+    <ClCompile Include="src\client\ui\ScreenWorldSelection.cpp" />
+    <ClCompile Include="src\client\renderer\VertexProducer.cpp" />
+    <ClCompile Include="src\common\World.cpp" />
+    <ClCompile Include="src\common\WorldHell.cpp" />
+    <ClCompile Include="src\common\world\BiomeBase.cpp" />
+    <ClCompile Include="src\common\world\BiomeProvider.cpp" />
+    <ClCompile Include="src\common\world\ChunkProvider.cpp" />
+    <ClCompile Include="src\common\world\ChunkProviderHell.cpp" />
+    <ClCompile Include="src\common\world\Explosion.cpp" />
+    <ClCompile Include="src\common\world\MobSpawner.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\client\Profiler.h" />
+    <ClInclude Include="src\client\renderer\block\BlockPreviewRenderer.h" />
+    <ClInclude Include="src\client\renderer\block\BlockRenderer.h" />
+    <ClInclude Include="src\client\renderer\entity\ArrowEntityRenderer.h" />
+    <ClInclude Include="src\client\renderer\entity\CreatureEntityRenderer.h" />
+    <ClInclude Include="src\client\renderer\entity\CreeperEntityRenderer.h" />
+    <ClInclude Include="src\client\renderer\entity\EntityRenderer.h" />
+    <ClInclude Include="src\client\renderer\entity\EntityRendererDispatcher.h" />
+    <ClInclude Include="src\client\renderer\entity\FallingSandEntityRenderer.h" />
+    <ClInclude Include="src\client\renderer\entity\ItemEntityRenderer.h" />
+    <ClInclude Include="src\client\renderer\entity\PigZombieEntityRenderer.h" />
+    <ClInclude Include="src\client\renderer\entity\TNTPrimedEntityRenderer.h" />
+    <ClInclude Include="src\client\ResourceManager.h" />
+    <ClInclude Include="src\common\block\BlockFallingSand.h" />
+    <ClInclude Include="src\common\block\BlockGrass.h" />
+    <ClInclude Include="src\common\block\BlockLog.h" />
+    <ClInclude Include="src\engine\Audio.h" />
+    <ClInclude Include="src\engine\Common.h" />
+    <ClInclude Include="src\engine\Font.h" />
+    <ClInclude Include="src\engine\Frustum.h" />
+    <ClInclude Include="src\engine\memory\MemoryAllocator.h" />
+    <ClInclude Include="src\engine\miniaudio\miniaudio.h" />
+    <ClInclude Include="src\common\Random.h" />
+    <ClInclude Include="src\engine\RenderingInterface.h" />
+    <ClInclude Include="src\engine\ScaledResolution.h" />
+    <ClInclude Include="src\engine\System.h" />
+    <ClInclude Include="src\engine\Time.h" />
+    <ClInclude Include="src\engine\win32\rsc\PixelShader.h" />
+    <ClInclude Include="src\engine\win32\rsc\VertexShader.h" />
+    <ClInclude Include="src\engine\zlib\izlibstream.h" />
+    <ClInclude Include="src\engine\zlib\ozlibstream.h" />
+    <ClInclude Include="src\engine\zlib\zlib_streambuf.h" />
+    <ClInclude Include="src\common\block\Block.h" />
+    <ClInclude Include="src\common\block\BlockBookshelf.h" />
+    <ClInclude Include="src\common\block\BlockCactus.h" />
+    <ClInclude Include="src\common\block\BlockChest.h" />
+    <ClInclude Include="src\common\block\BlockCraftingTable.h" />
+    <ClInclude Include="src\common\block\BlockCrop.h" />
+    <ClInclude Include="src\common\block\BlockDoor.h" />
+    <ClInclude Include="src\common\block\BlockFarmland.h" />
+    <ClInclude Include="src\common\block\BlockFire.h" />
+    <ClInclude Include="src\common\block\BlockFlower.h" />
+    <ClInclude Include="src\common\block\BlockFungus.h" />
+    <ClInclude Include="src\common\block\BlockFurnace.h" />
+    <ClInclude Include="src\common\block\BlockGravel.h" />
+    <ClInclude Include="src\common\block\BlockLeaves.h" />
+    <ClInclude Include="src\common\block\BlockLiquid.h" />
+    <ClInclude Include="src\common\block\BlockCrossShaped.h" />
+    <ClInclude Include="src\common\block\BlockNetherPortal.h" />
+    <ClInclude Include="src\common\block\BlockPumpkin.h" />
+    <ClInclude Include="src\common\block\BlockReed.h" />
+    <ClInclude Include="src\common\block\BlockSlab.h" />
+    <ClInclude Include="src\common\block\BlockStairs.h" />
+    <ClInclude Include="src\common\block\BlockTNT.h" />
+    <ClInclude Include="src\common\block\BlockTorch.h" />
+    <ClInclude Include="src\common\CachedChunkAccess.h" />
+    <ClInclude Include="src\common\Chunk.h" />
+    <ClInclude Include="src\client\renderer\AnimatedFireTexture.h" />
+    <ClInclude Include="src\client\renderer\AnimatedLavaTexture.h" />
+    <ClInclude Include="src\client\renderer\AnimatedPortalTexture.h" />
+    <ClInclude Include="src\client\renderer\AnimatedWaterTexture.h" />
+    <ClInclude Include="src\client\Client.h" />
+    <ClInclude Include="src\client\renderer\ColorizerGrass.h" />
+    <ClInclude Include="src\client\ParticleEngine.h" />
+    <ClInclude Include="src\client\PlayerHandler.h" />
+    <ClInclude Include="src\client\renderer\RenderHelper.h" />
+    <ClInclude Include="src\client\SPPlayerHandler.h" />
+    <ClInclude Include="src\client\SPWorldAccess.h" />
+    <ClInclude Include="src\client\renderer\WorldRenderer.h" />
+    <ClInclude Include="src\common\entity\AABB.h" />
+    <ClInclude Include="src\common\entity\AnimalEntityBase.h" />
+    <ClInclude Include="src\common\entity\ArrowEntity.h" />
+    <ClInclude Include="src\common\entity\BaseEntity.h" />
+    <ClInclude Include="src\common\entity\ChickenEntity.h" />
+    <ClInclude Include="src\common\entity\CowEntity.h" />
+    <ClInclude Include="src\common\entity\CreatureEntity.h" />
+    <ClInclude Include="src\common\entity\CreeperEntity.h" />
+    <ClInclude Include="src\common\entity\FallingSandEntity.h" />
+    <ClInclude Include="src\common\entity\ItemEntity.h" />
+    <ClInclude Include="src\common\entity\MobEntity.h" />
+    <ClInclude Include="src\common\entity\PigEntity.h" />
+    <ClInclude Include="src\common\entity\PigZombieEntity.h" />
+    <ClInclude Include="src\common\entity\PlayerEntity.h" />
+    <ClInclude Include="src\common\entity\TNTPrimedEntity.h" />
+    <ClInclude Include="src\common\entity\ZombieEntity.h" />
+    <ClInclude Include="src\common\FastNoise.h" />
+    <ClInclude Include="src\common\gen\TerrainDecorator.h" />
+    <ClInclude Include="src\client\renderer\ItemRenderer.h" />
+    <ClInclude Include="src\common\gen\WorldGenBase.h" />
+    <ClInclude Include="src\common\gen\WorldGenCactus.h" />
+    <ClInclude Include="src\common\gen\WorldGenCaves.h" />
+    <ClInclude Include="src\common\gen\WorldGenClay.h" />
+    <ClInclude Include="src\common\gen\WorldGenFire.h" />
+    <ClInclude Include="src\common\gen\WorldGenFlowers.h" />
+    <ClInclude Include="src\common\gen\WorldGenGlowstone.h" />
+    <ClInclude Include="src\common\gen\WorldGenMinable.h" />
+    <ClInclude Include="src\common\gen\WorldGenNetherLava.h" />
+    <ClInclude Include="src\common\gen\WorldGenPumpkin.h" />
+    <ClInclude Include="src\common\gen\WorldGenReeds.h" />
+    <ClInclude Include="src\common\ItemStack.h" />
+    <ClInclude Include="src\common\item\Item.h" />
+    <ClInclude Include="src\common\item\ItemBow.h" />
+    <ClInclude Include="src\common\item\ItemBucket.h" />
+    <ClInclude Include="src\common\item\ItemDoor.h" />
+    <ClInclude Include="src\common\item\ItemEmptyBucket.h" />
+    <ClInclude Include="src\common\item\ItemFlintAndSteel.h" />
+    <ClInclude Include="src\common\item\ItemFood.h" />
+    <ClInclude Include="src\common\item\ItemReed.h" />
+    <ClInclude Include="src\common\item\ItemWheatSeed.h" />
+    <ClInclude Include="src\common\IVec3Set.h" />
+    <ClInclude Include="src\common\IWorldAccess.h" />
+    <ClInclude Include="src\client\renderer\model\ModelBase.h" />
+    <ClInclude Include="src\client\renderer\model\ModelBox.h" />
+    <ClInclude Include="src\client\renderer\model\ModelChicken.h" />
+    <ClInclude Include="src\client\renderer\model\ModelCow.h" />
+    <ClInclude Include="src\client\renderer\model\ModelCreeper.h" />
+    <ClInclude Include="src\client\renderer\model\ModelHumanoid.h" />
+    <ClInclude Include="src\client\renderer\model\ModelPart.h" />
+    <ClInclude Include="src\client\renderer\model\ModelPartItem.h" />
+    <ClInclude Include="src\client\renderer\model\ModelPig.h" />
+    <ClInclude Include="src\client\renderer\model\ModelRegistry.h" />
+    <ClInclude Include="src\client\MusicManager.h" />
+    <ClInclude Include="src\common\nbt\BigEndianDataStream.h" />
+    <ClInclude Include="src\common\nbt\NBT.h" />
+    <ClInclude Include="src\common\nbt\NBTBase.h" />
+    <ClInclude Include="src\common\nbt\TagByteArray.h" />
+    <ClInclude Include="src\common\nbt\TagCompound.h" />
+    <ClInclude Include="src\common\nbt\TagList.h" />
+    <ClInclude Include="src\common\nbt\TagNumeric.h" />
+    <ClInclude Include="src\common\nbt\TagString.h" />
+    <ClInclude Include="src\common\noise\PerlinNoise.h" />
+    <ClInclude Include="src\common\noise\SimplexNoise.h" />
+    <ClInclude Include="src\common\path\NavPath.h" />
+    <ClInclude Include="src\common\path\PathFinder.h" />
+    <ClInclude Include="src\common\PortalStructure.h" />
+    <ClInclude Include="src\common\Recipe.h" />
+    <ClInclude Include="src\common\RegionFile.h" />
+    <ClInclude Include="src\common\SaveManager.h" />
+    <ClInclude Include="src\common\Teleporter.h" />
+    <ClInclude Include="src\common\tile\ChestTileEntity.h" />
+    <ClInclude Include="src\common\tile\FurnaceTileEntity.h" />
+    <ClInclude Include="src\common\tile\TileEntity.h" />
+    <ClInclude Include="src\common\Timer.h" />
+    <ClInclude Include="src\common\ToolTier.h" />
+    <ClInclude Include="src\client\ui\IngameInterface.h" />
+    <ClInclude Include="src\client\ui\ScreenBase.h" />
+    <ClInclude Include="src\client\ui\ScreenContainer.h" />
+    <ClInclude Include="src\client\ui\ScreenCrafting.h" />
+    <ClInclude Include="src\client\ui\ScreenFurnace.h" />
+    <ClInclude Include="src\client\ui\ScreenGameOver.h" />
+    <ClInclude Include="src\client\ui\ScreenInventory.h" />
+    <ClInclude Include="src\client\ui\ScreenMainMenu.h" />
+    <ClInclude Include="src\client\ui\ScreenPause.h" />
+    <ClInclude Include="src\client\ui\ScreenWorldSelection.h" />
+    <ClInclude Include="src\client\ui\SlotIds.h" />
+    <ClInclude Include="src\client\renderer\VertexProducer.h" />
+    <ClInclude Include="src\common\World.h" />
+    <ClInclude Include="src\common\WorldCommon.h" />
+    <ClInclude Include="src\common\WorldHell.h" />
+    <ClInclude Include="src\common\world\BiomeBase.h" />
+    <ClInclude Include="src\common\world\BiomeProvider.h" />
+    <ClInclude Include="src\common\world\ChunkProvider.h" />
+    <ClInclude Include="src\common\world\ChunkProviderHell.h" />
+    <ClInclude Include="src\common\world\Explosion.h" />
+    <ClInclude Include="src\common\world\MobSpawner.h" />
+    <ClInclude Include="src\Util.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

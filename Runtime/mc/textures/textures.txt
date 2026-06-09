@@ -1,0 +1,8 @@
+Copy the texture files from a1.2.6.jar
+You need both terrain.png and particles.png in the root of this folder
+Copy the following folders to this folder
+/gui
+/environment
+/item
+/mob
+/terrain

@@ -1,0 +1,178 @@
+(DONE) 0 	Air
+(DONE) 1 	Stone
+(DONE) 2 	Grass
+(DONE) 3 	Dirt
+(DONE) 4 	Cobblestone
+(DONE) 5 	Wood
+(DONE) 6 	Sapling
+(DONE) 7 	Bedrock (Adminium)
+(DONE) 8 	Water
+(DONE) 9 	Stationary water
+(DONE) 10	Lava
+(DONE) 11	Stationary lava
+(DONE) 12	Sand
+(DONE) 13	Gravel
+(DONE) 14	Gold ore
+(DONE) 15	Iron ore
+(DONE) 16	Coal ore
+(DONE) 17	Log
+(DONE) 18	Leaves
+(DONE) 19	Sponge
+(DONE) 20	Glass
+(DONE) 21	Red Cloth
+(DONE) 22	Orange Cloth
+(DONE) 23	Yellow Cloth
+(DONE) 24	Lime Cloth
+(DONE) 25	Green Cloth
+(DONE) 26	Aqua green Cloth
+(DONE) 27	Cyan Cloth
+(DONE) 28	Blue Cloth
+(DONE) 29	Purple Cloth
+(DONE) 30	Indigo Cloth
+(DONE) 31	Violet Cloth
+(DONE) 32	Magenta Cloth
+(DONE) 33	Pink Cloth
+(DONE) 34	Black Cloth
+(DONE) 35	Gray Cloth (White Cloth in Alpha)
+(DONE) 36	White Cloth
+(DONE) 37	Yellow flower
+(DONE) 38	Red rose
+(DONE) 39	Brown Mushroom
+(DONE) 40	Red Mushroom
+(DONE) 41	Gold Block
+(DONE) 42	Iron Block
+(DONE) 43	Double Slab
+(DONE) 44	Slab
+(DONE) 45	Brick
+(DONE) 46	TNT
+(DONE) 47	Bookcase
+(DONE) 48	Mossy Cobblestone
+(DONE) 49	Obsidian
+(DONE) 50	Torch
+(DONE) 51	Fire
+(IMPLEMENT MOBS) 52	Mob Spawner
+(DONE) 53	Wooden Stairs
+(DONE) 54	Chest
+55	Redstone Wire
+(DONE) 56	Diamond Ore
+(DONE) 57	Diamond Block
+(DONE) 58	Workbench
+(DONE) 59	Crops
+(DONE) 60	Soil
+(DONE) 61	Furnace
+(DONE) 62	Burning Furnace
+63	Sign Post
+64	Wooden Door, bottom half
+65	Ladder
+66	Minecart Rail
+(DONE) Cobblestone Stairs
+68	Sign
+69	Lever
+70	Stone Pressure Plate
+71	Iron Door, bottom half
+72	Wooden Pressure Plate
+73	Redstone Ore
+74	Lighted Redstone Ore
+75	Redstone torch ("off" state)
+76	Redstone torch ("on" state)
+77	Stone Button
+(DONE) 78	Snow
+79	Ice
+(DONE) 80	Snow Block
+(DONE) 81	Cactus
+(DONE) 82	Clay
+(DONE) 83	Reed
+84	Jukebox
+
+=======ITEMS=================
+(DONE) 256	Iron Shovel
+(DONE) 257	Iron Pickaxe
+(DONE) 258	Iron Axe
+(DONE) 259	Flint and Steel
+(DONE) 260	Apple
+(DONE) 261	Bow
+(DONE) 262	Arrow
+(DONE) 263	Coal
+(DONE) 264	Diamond
+(DONE) 265	Iron Ingot
+(DONE) 266	Gold Ingot
+(DONE) 267	Iron Sword
+(DONE) 268	Wooden Sword
+(DONE) 269	Wooden Shovel
+(DONE) 270	Wooden Pickaxe
+(DONE) 271	Wooden Axe
+(DONE) 272	Stone Sword
+(DONE) 273	Stone Shovel
+(DONE) 274	Stone Pickaxe
+(DONE) 275	Stone Axe
+(DONE) 276	Diamond Sword
+(DONE) 277	Diamond Shovel
+(DONE) 278	Diamond Pickaxe
+(DONE) 279	Diamond Axe
+(DONE) 280	Stick
+(DONE) 281	Bowl
+(DONE) 282	Mushroom Soup
+(DONE) 283	Gold Sword
+(DONE) 284	Gold Shovel
+(DONE) 285	Gold Pickaxe
+(DONE) 286	Gold Axe
+(DONE) 287	String
+(DONE) 288	Feather
+(DONE) 289	Gunpowder
+(DONE) 290	Wooden Hoe
+(DONE) 291	Stone Hoe
+(DONE) 292	Iron Hoe
+(DONE) 293	Diamond Hoe
+(DONE) 294	Gold Hoe
+(DONE) 295	Seeds
+(DONE) 296	Wheat
+(DONE) 297	Bread
+(DONE) 298	Leather Helmet
+(DONE) 299	Leather Chestplate
+(DONE) 300	Leather Pants
+(DONE) 301	Leather Boots
+(DONE) 302	Chainmail Helmet
+(DONE) 303	Chainmail Chestplate
+(DONE) 304	Chainmail Pants
+(DONE) 305	Chainmail Boots
+(DONE) 306	Iron Helmet
+(DONE) 307	Iron Chestplate
+(DONE) 308	Iron Pants
+(DONE) 309	Iron Boots
+(DONE) 310	Diamond Helmet
+(DONE) 311	Diamond Chestplate
+(DONE) 312	Diamond Pants
+(DONE) 313	Diamond Boots
+(DONE) 314	Gold Helmet
+(DONE) 315	Gold Chestplate
+(DONE) 316	Gold Pants
+(DONE) 317	Gold Boots
+(DONE) 318	Flint
+(DONE) 319	Pork
+(DONE) 320	Grilled Pork
+321	Paintings
+322	Golden apple
+323	Sign
+(DONE) 324	Wooden door
+(DONE) 325	Bucket
+(DONE) 326	Water bucket
+(DONE) 327	Lava bucket
+328	Mine cart
+329	Saddle
+330	Iron door
+331	Redstone
+332	Snowball
+333	Boat
+(DONE) 334	Leather
+335	Milk Bucket
+(DONE) 336	Clay Brick
+(DONE) 337	Clay Balls
+(DONE) 338	Reed
+(DONE) 339	Paper
+(DONE) 340	Book
+341	Slime Ball
+342	Storage Minecart
+343	Powered Minecart
+344	Egg
+2256	Gold Record
+2257	Green Record
