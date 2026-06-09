@@ -22,6 +22,7 @@
 
 #include "ozlibstream.h"
 #include "zlib_streambuf.h"
+#include <cstdint>
 
 namespace zlib
 {

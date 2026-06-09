@@ -1,4 +1,4 @@
-#include "font.h"
+#include "Font.h"
 
 #include "engine/System.h"
 #include "engine/RenderingInterface.h"
