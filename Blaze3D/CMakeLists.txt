@@ -348,12 +348,24 @@ set(B3D_HEADER
 
 set(B3D_EXTRA_LIBS)
 
+if (NOT B3D_BACKEND)
 
-if (WIN32)
+	if (WIN32)
+		set(B3D_BACKEND "WIN32")
+	elseif(UNIX)
+		set(B3D_BACKEND "UNIX")
+	endif()
+endif()
 
-	message("Adding WIN32 code")
 
-	add_compile_definitions(RENDERER_D3D11)
+if (B3D_BACKEND STREQUAL "WIN32")
+
+	message("Using WIN32 backend code")
+
+	if (NOT B3D_RENDERER)
+		set(B3D_RENDERER D3D11)
+	endif()
+
 	list(APPEND B3D_SOURCE
 			src/engine/win32/PragmaLibs.cpp
 			src/engine/win32/System.cpp
@@ -363,11 +375,14 @@ if (WIN32)
 	set(B3D_EXTRA_LIBS d3d11)
 	
 
-elseif (UNIX)
+elseif (B3D_BACKEND STREQUAL "UNIX")
 
-	message("Adding UNIX code")
+	message("Using UNIX backend code")
 
-	add_compile_definitions(RENDERER_GLES)
+	if (NOT B3D_RENDERER)
+		set(B3D_RENDERER GLES)
+	endif()
+
 	list(APPEND B3D_SOURCE
 			src/engine/unix/System.cpp
 			src/engine/unix/UnixRenderingInterface.cpp
@@ -381,7 +396,7 @@ elseif (UNIX)
 
 
 else ()
-	error("Invalid platform!")
+	message(FATAL_ERROR "Invalid platform backend " ${B3D_BACKEND})
 endif ()
 
 
@@ -395,6 +410,10 @@ target_include_directories(Blaze3D PRIVATE
 	${GLM_INCLUDE_DIRS}
 	${CMAKE_CURRENT_SOURCE_DIR}/src
 )
+
+message("Using ${B3D_RENDERER} for rendering (RENDERER_${B3D_RENDERER})")
+
+target_compile_definitions(Blaze3D PRIVATE "RENDERER_${B3D_RENDERER}")
 
 target_link_libraries(Blaze3D PRIVATE SDL3::SDL3 ZLIB::ZLIB glm::glm-header-only ${B3D_EXTRA_LIBS})
 

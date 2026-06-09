@@ -3,7 +3,7 @@
 // Uses OpenGLES 3.2 or OpenGL 3.3
 //
 
-#ifdef RENDERER_GLES || RENDERER_GL3
+#if defined(RENDERER_GLES) || defined(RENDERER_GL3)
 
 #include "../RenderingInterface.h"
 #include "../memory/MemoryAllocator.h"
@@ -227,8 +227,12 @@ void riContext::Init() {
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, quadIndices.size() * sizeof(uint32_t), quadIndices.data(), GL_STATIC_DRAW);
 
 
+#if defined(RENDERER_GLES)
     printf("GLES 3.2 Initialized!\n");
 
+#else
+    printf("GL Core 3.3 Initialized!\n");
+#endif
 
 }
 
@@ -484,7 +488,12 @@ riHandle riContext::CreateBuffer(uint32_t size, void *data) {
 }
 
 void riContext::DestroyBuffer(riHandle pBuffer) {
-    BufferData handle = *static_cast<BufferData *>(pBuffer);
+
+    BufferData handle = *static_cast<BufferData*>(pBuffer);
+
+    if (handle.Checksum != BufferChecksum)
+        return;
+
     glDeleteBuffers(1, &handle.Handle);
     sysFree(pBuffer);
 }
