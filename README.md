@@ -9,7 +9,8 @@ This is not a clean room implementation, it was written while looking at a decom
 
 ### Windows
 
-Just open the solution it should work (Requires VS 2026)
+Just open the solution it should compile (Requires VS 2026)
+You need to get the textures from the alpha 1.2.6 jar file (look in Runtime/mc/textures.txt for more info)
 
 ### Linux / Mac
 
